@@ -1,2 +1,4 @@
-# Documentation
-Documentation for system administration/DevOps/Security etc.
+System administration documentation
+============
+
+Markdown rules link : https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
