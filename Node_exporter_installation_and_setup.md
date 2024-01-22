@@ -23,7 +23,7 @@ sudo cp node_exporter-files/node_exporter /usr/bin/
 sudo chown node_exporter:node_exporter /usr/bin/node_exporter
 ```
 5. Setup Node Exporter Service
-- Create a node_exporter service file.
+- Create a node_exporter service file
 ```
 sudo vi /usr/lib/systemd/system/node_exporter.service
 ```
@@ -51,4 +51,14 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 sudo systemctl start node_exporter
 sudo systemctl status node_exporter
+```
+7. Configure node_exporter to start at boot 
+```
+sudo systemctl enable node_exporter.service
+sudo firewall-cmd --permanent --zone=public --add-port=9200/tcp
+sudo firewall-cmd --reload
+```
+8. Verify Node Exporter is Running
+```
+http://<node_exporter-ip>:9200/metrics
 ```
